@@ -1,0 +1,37 @@
+{
+  "name": "xpressengine-plugin/google_analytics_ga4",
+  "description": "구글 애널리틱스(GA4)를 사용할 수 있는 플러그인입니다.",
+  "keywords": [
+    "xpressengine",
+    "plugin"
+  ],
+  "license": "LGPL-3.0-or-later",
+  "version": "1.0.0",
+  "type": "xpressengine-plugin",
+  "support": {
+    "email": "developers@xpressengine.com"
+  },
+  "authors": [
+    {
+      "name": "XE Developers",
+      "email": "developers@xpressengine.com",
+      "homepage": "https://xpressengine.com",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "xpressengine": {
+      "title": "GoogleAnalyticsGa4",
+      "icon": "icon.png",
+      "component": {}
+    }
+  },
+  "require": {
+    "xpressengine/xpressengine": "~3.0.15"
+  },
+  "autoload": {
+    "psr-4": {
+      "Xpressengine\\XePlugin\\GoogleAnalyticsGa4\\": "src/"
+    }
+  }
+}
