@@ -47,7 +47,7 @@ class ManageController extends Controller
 
         $inputs = $request->only(
             [
-                'measurementId'
+                'webMeasurementId'
             ]
         );
 
@@ -74,7 +74,7 @@ class ManageController extends Controller
     private function getRules()
     {
         return [
-            'measurementId' => 'required'
+            'webMeasurementId' => 'required'
         ];
     }
 
