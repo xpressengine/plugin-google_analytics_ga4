@@ -21,7 +21,7 @@
   ],
   "extra": {
     "xpressengine": {
-      "title": "GoogleAnalyticsGa4",
+      "title": "Google Analytics Ga4",
       "icon": "icon.png",
       "component": {}
     }
