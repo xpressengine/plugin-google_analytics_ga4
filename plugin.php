@@ -85,10 +85,7 @@ class Plugin extends AbstractPlugin
      */
     public function install()
     {
-        Artisan::call('translation:import',[
-            'name'=>'google_analytics_ga4',
-            '--path' => str_replace(base_path(),'.', self::path('langs/lang.php'))
-        ]);
+        $this->putLang();
     }
 
     /**
@@ -111,7 +108,7 @@ class Plugin extends AbstractPlugin
      */
     public function update()
     {
-        // implement code
+        $this->putLang();
     }
 
     /**
@@ -178,4 +175,19 @@ class Plugin extends AbstractPlugin
             }
         );
     }
+
+    /**
+     * update languages
+     *
+     * @return void
+     */
+    public static function putLang()
+    {
+        // put board translation source
+        /** @var \Xpressengine\Translation\Translator $trans */
+        $trans = app('xe.translator');
+        $trans->putFromLangDataSource('google_analytics_ga4', base_path('plugins/google_analytics_ga4/langs/lang.php'));
+    }
+
+
 }
