@@ -63,7 +63,7 @@ class Plugin extends AbstractPlugin
             );
         }, true);
 
-        app()->alias(Handler::class, 'xe.ga4');
+        app()->alias(Handler::class, 'xe.ga4.handler');
     }
 
     /**
@@ -166,10 +166,10 @@ class Plugin extends AbstractPlugin
                 /** @var \Illuminate\Routing\Route $route */
                 $route = app('router')->current();
                 if ($route && in_array('settings', $route->middleware()) === false) {
-                    $setting = app('xe.ga4')->getSetting();
-                    if ($setting->get('measurementId')) {
+                    $setting = app('xe.ga4.handler')->getSetting();
+                    if ($setting->get('webMeasurementId')) {
                         XeFrontend::html('ga4:tracking')->content(
-                            $this->getMeasurementCode($setting->get('measurementId'))
+                            $this->getMeasurementCode($setting->get('webMeasurementId'))
                         )->load();
                     }
                 }
